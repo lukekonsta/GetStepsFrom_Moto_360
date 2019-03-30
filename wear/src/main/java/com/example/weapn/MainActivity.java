@@ -24,7 +24,7 @@ import java.util.Calendar;
 
 public class MainActivity extends WearableActivity implements SensorEventListener {
 
-    private TextView mTextView;
+    private TextView mTextView, mTextView2;
     SensorManager sensorManager;
     boolean running = false;
     private int STORAGE_PERMISSION_CODE = 1;
@@ -44,6 +44,7 @@ public class MainActivity extends WearableActivity implements SensorEventListene
         setContentView(R.layout.activity_main);
 
         mTextView = (TextView) findViewById(R.id.text);
+        mTextView2 = (TextView) findViewById(R.id.text2);
 
 
         if (ContextCompat.checkSelfPermission(MainActivity.this,
@@ -152,6 +153,8 @@ public class MainActivity extends WearableActivity implements SensorEventListene
             value = (int) values[0];
         }
 
+        finalValue++;
+
 
 
 
@@ -193,8 +196,9 @@ public class MainActivity extends WearableActivity implements SensorEventListene
 
 
             //mTextView.setText("Step Counter Detected : " + value);//moto 360 finds this one
-            finalValue = value;
-            mTextView.setText("Step Counter Detected final value : " + finalValue);
+            // = value;
+            mTextView.setText("Step Counter Detected final value : " + value);
+            mTextView2.setText("Step Counter Detected final value : " + finalValue);
 
 
 
